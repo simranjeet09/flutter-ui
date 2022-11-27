@@ -20,7 +20,7 @@ class Welcome extends StatelessWidget {
               borderRadius: BorderRadius.circular(50),
               child: InkWell(
                 onTap: () {
-                  Get.toNamed("/");
+                  Get.toNamed("/home");
                 },
                 borderRadius: BorderRadius.circular(50),
                 child: Container(

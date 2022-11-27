@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter_assignment/network/ApiAdapter.dart';
 import 'package:flutter_assignment/news/news_res.dart';
-import 'package:flutter_assignment/tools/news_details.dart';
+import 'package:flutter_assignment/news/news_details.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';

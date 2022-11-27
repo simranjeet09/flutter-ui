@@ -6,7 +6,7 @@ import 'package:flutter_assignment/notes/AddNote.dart';
 import 'package:flutter_assignment/todo/Todo.dart';
 import 'package:flutter_assignment/todo/AddTodo.dart';
 import 'package:flutter_assignment/tools/CalWidget.dart';
-import 'package:flutter_assignment/tools/news_details.dart';
+import 'package:flutter_assignment/news/news_details.dart';
 import 'package:flutter_assignment/welcome/welcome.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -32,12 +32,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         title: 'Flutter Demo',
-        initialRoute: "/",
+        initialRoute: "/welcome_one",
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
         routes: {
           '/': (BuildContext context) {
+            return Welcome();
+          },
+          '/home': (BuildContext context) {
             return Home();
           },
           '/dashboard': (BuildContext context) {

@@ -28,7 +28,7 @@ class WelcomeOne extends StatelessWidget {
                   margin: EdgeInsets.only(bottom: 100),
                   child: FloatingActionButton(onPressed: (){
 
-                    Get.toNamed("/");
+                    Get.toNamed("/dashboard");
 
                   }, child: Icon(Icons.navigate_next),)))
 

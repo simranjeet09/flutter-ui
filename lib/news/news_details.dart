@@ -37,19 +37,19 @@ class NewsDetails extends StatelessWidget {
                       height: 10,
                     ),
                     Text(
-                      item.title!,
+                      item.title??"N/a",
                       style: const TextStyle(
                           fontSize: 16, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(
                       height: 10,
                     ),
-                    Text(item.description!,
+                    Text(item.description??"N/A",
                         style: const TextStyle(
                             fontSize: 14, fontWeight: FontWeight.w400)),const SizedBox(
                       height: 10,
                     ),
-                    Text(item.content!,
+                    Text(item.content??"N/A",
                         style: const TextStyle(
                             fontSize: 14, fontWeight: FontWeight.w400)),
                     const SizedBox(
@@ -62,16 +62,18 @@ class NewsDetails extends StatelessWidget {
                           children: [
                             Text(
                               DateFormat('dd MMM yyyy hh:mm:a').format(
-                                  DateTime.parse(item.publishedAt!).toLocal()),
+                                  DateTime.parse(item.publishedAt??"/").toLocal()),
                               textAlign: TextAlign.end,
                               style: const TextStyle(
                                   fontSize: 14, fontWeight: FontWeight.w800),
                             ),
-                            Text(
-                              "Author: ${item.author!}",
-                              textAlign: TextAlign.end,
-                              style: const TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w800),
+                            Flexible(
+                              child: Text(
+                                "Author: ${item.author??"N/A"}",
+                                textAlign: TextAlign.end,
+                                style: const TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w800),
+                              ),
                             ),
                           ],
                         )),

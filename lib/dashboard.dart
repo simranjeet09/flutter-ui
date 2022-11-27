@@ -13,41 +13,16 @@ class Dashboard extends StatelessWidget {
 
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-          Row(
-            children: [  Container(
-              width:  MediaQuery.of(context).size.width / 2,
-              height:MediaQuery.of(context).size.width / 2,
-              child: InkWell(
-                onTap: (){
-                  Get.toNamed("/news");
-                  
-                },
-                child: Card(
-                  elevation: 20,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [Icon(Icons.newspaper, color: Colors.blue,),
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text("News", style: TextStyle(fontSize: 16, color: Colors.blue),),
-                    )],
-                    
-                  ),
-                  
-
-
-                ),
-              ),
-            ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
               SizedBox(
-                width:  MediaQuery.of(context).size.width / 2,
-                height:MediaQuery.of(context).size.width / 2,
-                child:  InkWell(
+                width: double.infinity,
+                height:MediaQuery.of(context).size.height / 3,
+                child: InkWell(
                   onTap: (){
-                    Get.toNamed("/notesList");
-
+                    Get.toNamed("/weather");
 
                   },
                   child: Card(
@@ -55,10 +30,10 @@ class Dashboard extends StatelessWidget {
 
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [Icon(Icons.notes, color: Colors.blue),
+                      children: const [Icon(Icons.newspaper, color: Colors.blue,),
                         Padding(
                           padding: EdgeInsets.all(8.0),
-                          child: Text("Notes", style: TextStyle(fontSize: 16, color: Colors.blue),),
+                          child: Text("Weather", style: TextStyle(fontSize: 16, color: Colors.blue),),
                         )],
 
                     ),
@@ -67,39 +42,10 @@ class Dashboard extends StatelessWidget {
 
                   ),
                 ),
-              )],
-
-          ),
-          Row(
-            children: [  Container(
-              width:  MediaQuery.of(context).size.width / 2,
-              height:MediaQuery.of(context).size.width / 2,
-              child: InkWell(
-                onTap: (){
-                  Get.toNamed("/weather");
-
-                },
-                child: Card(
-                  elevation: 20,
-
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [Icon(Icons.newspaper, color: Colors.blue,),
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text("Weather", style: TextStyle(fontSize: 16, color: Colors.blue),),
-                    )],
-
-                  ),
-
-
-
-                ),
               ),
-            ),
               SizedBox(
-                width:  MediaQuery.of(context).size.width / 2,
-                height:MediaQuery.of(context).size.width / 2,
+                width:  double.infinity,
+                height:MediaQuery.of(context).size.height / 3,
                 child:  InkWell(
                   onTap: (){
                     Get.toNamed("/todo");
@@ -120,65 +66,15 @@ class Dashboard extends StatelessWidget {
 
                   ),
                 ),
-              )],
+              )
+
+
+
+
+
+            ],
 
           ),
-            Row(
-              children: [  Container(
-                width:  MediaQuery.of(context).size.width / 2,
-                height:MediaQuery.of(context).size.width / 2,
-                child: InkWell(
-                  onTap: (){
-                    Get.toNamed("/welcome");
-
-                  },
-                  child: Card(
-                    elevation: 20,
-
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [Icon(Icons.newspaper, color: Colors.blue,),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text("Welcome", style: TextStyle(fontSize: 16, color: Colors.blue),),
-                        )],
-
-                    ),
-
-
-
-                  ),
-                ),
-              ),
-                SizedBox(
-                  width:  MediaQuery.of(context).size.width / 2,
-                  height:MediaQuery.of(context).size.width / 2,
-                  child:  InkWell(
-                    onTap: (){
-                      Get.toNamed("/welcome_one");
-                    },
-                    child: Card(
-                      elevation: 20,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [Icon(Icons.today_outlined, color: Colors.blue),
-                          Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Text("Welcome 1", style: TextStyle(fontSize: 16, color: Colors.blue),),
-                          )],
-
-                      ),
-
-
-
-                    ),
-                  ),
-                )],
-
-            ),
-
-          ],
-
         ),
 
       ),
