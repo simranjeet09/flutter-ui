@@ -12,7 +12,6 @@ class Dashboard extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: PRIMARY_COLOR,
         title: Text("Home"),
-
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -20,7 +19,7 @@ class Dashboard extends StatelessWidget {
           child: Column(
             children: [
               InkWell(
-                onTap: (){
+                onTap: () {
                   Get.toNamed("/weather");
                 },
                 child: Card(
@@ -32,7 +31,8 @@ class Dashboard extends StatelessWidget {
 
                       ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
-                          child: Image.asset("assets/weather.jpg",   fit: BoxFit.fill)),
+                          child: Image.asset("assets/weather.jpg",
+                              fit: BoxFit.fill)),
                       const Positioned(
                         bottom: 1,
                         left: 1,
@@ -40,55 +40,54 @@ class Dashboard extends StatelessWidget {
                         child: Center(
                           child: Padding(
                             padding: EdgeInsets.all(8.0),
-                            child: Text("Today's weather", style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold),),
+                            child: Text(
+                              "Today's weather",
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),
-                      ],
-
+                    ],
                   ),
-
-
-
                 ),
               ),
               SizedBox(
-                width:  double.infinity,
-                height:MediaQuery.of(context).size.height / 3,
-                child:  InkWell(
-                  onTap: (){
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height / 3,
+                child: InkWell(
+                  onTap: () {
                     Get.toNamed("/todo");
                   },
                   child: Card(
                     elevation: 20,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children:   [
-                        Image.asset("assets/todo.jpg",   height:MediaQuery.of(context).size.height / 4, fit: BoxFit.fitWidth),
+                      children: [
+                        Image.asset("assets/todo.jpg",
+                            height: MediaQuery.of(context).size.height / 4,
+                            fit: BoxFit.fitWidth),
                         const Padding(
                           padding: EdgeInsets.all(8.0),
-                          child: Text("TODO", style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold),),
-                        )],
-
+                          child: Text(
+                            "TODO",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        )
+                      ],
                     ),
-
-
-
                   ),
                 ),
               )
-
-
-
-
-
             ],
-
           ),
         ),
-
       ),
-
     );
   }
 }
