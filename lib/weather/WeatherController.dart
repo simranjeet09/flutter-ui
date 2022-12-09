@@ -16,7 +16,7 @@ class WeatherController extends GetxController{
     super.onInit();
   }
 
-  void fetchWeather() async {
+  Future<void> fetchWeather() async {
     isLoading(true);
     http.Response res = await ApiProvider().makeHttpGetRequest(
         "https://api.openweathermap.org/data/2.5/weather?lat=44.410469&lon=-79.669321&appid=5a8d943f54b84c4ea5d47800828f2814&units=metric");

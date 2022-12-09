@@ -5,7 +5,7 @@ import 'Todo.dart';
 
 class TodoController extends GetxController {
   var todos = List<Todo>.empty().obs;
-
+  RxInt selectedId=0.obs;
   @override
   void onInit() {
     List? storedTodos = GetStorage().read<List>('todo');
@@ -18,6 +18,8 @@ class TodoController extends GetxController {
     });
     super.onInit();
   }
+
+
 
 
 

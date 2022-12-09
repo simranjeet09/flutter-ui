@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class WelcomeOne extends StatelessWidget {
-  const WelcomeOne({Key? key}) : super(key: key);
+import '../colors.dart';
+
+class OnBoarding extends StatelessWidget {
+  const OnBoarding({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,9 @@ class WelcomeOne extends StatelessWidget {
               bottom: 1,
               child: Container(
                   margin: EdgeInsets.only(bottom: 100),
-                  child: FloatingActionButton(onPressed: (){
+                  child: FloatingActionButton(
+                    backgroundColor: PRIMARY_COLOR,
+                    onPressed: (){
 
                     Get.toNamed("/dashboard");
 

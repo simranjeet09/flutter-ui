@@ -11,7 +11,6 @@ class ApiProvider {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
       'Cache-Control': 'no-cache'
-      //'Authorization': "Bearer ${Preferences.getToken().trim()}"
     };
 
     return await http.get(Uri.parse(url), headers: headers);

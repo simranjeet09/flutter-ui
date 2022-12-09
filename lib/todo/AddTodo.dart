@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
+import '../colors.dart';
 import 'Todo.dart';
 import 'TodoController.dart';
 
@@ -17,7 +18,9 @@ class AddTodo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Add"),
+        backgroundColor: PRIMARY_COLOR,
+
+        title: Text("Add Task"),
 
       ),
       body: Container(
@@ -28,7 +31,7 @@ class AddTodo extends StatelessWidget {
               child: TextField(
                 // textAlign: TextAlign.center,
                 decoration: const InputDecoration(
-                  hintText: "What do you want to accomplish?",
+                  hintText: "Start typing here.... ",
                   border: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
@@ -46,6 +49,9 @@ class AddTodo extends StatelessWidget {
               children: [
                 // ignore: deprecated_member_use
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.grey,
+                  ),
                   child: const Text('Cancel'),
                   onPressed: () {
                     Get.back();
@@ -53,14 +59,21 @@ class AddTodo extends StatelessWidget {
                 ),
                 // ignore: deprecated_member_use
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: PRIMARY_COLOR,
+                  ),
                   child: const Text('Add'),
                   onPressed: () {
-                    todoController.todos.add(
-                      Todo(
-                        text: textEditingController.text,
-                      ),
-                    );
-                    Get.back();
+                    if (textEditingController.text.isNotEmpty) {
+                      todoController.todos.add(
+                        Todo(
+                          text: textEditingController.text,
+                        ),
+                      );
+                      Get.back();
+                    }  
+
+
                   },
                 ),
               ],

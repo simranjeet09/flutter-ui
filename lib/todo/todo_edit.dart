@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../colors.dart';
 import 'TodoController.dart';
 
 class TodoEdit extends StatelessWidget {
-  final int? index;
-  TodoEdit({Key? key, @required this.index}) : super(key: key);
-  final TodoController todoController = Get.find<TodoController>();
+  TodoEdit({Key? key}) : super(key: key);
+  final TodoController todoController = Get.put(TodoController());
+
   @override
   Widget build(BuildContext context) {
     final TextEditingController textEditingController =
-    TextEditingController(text: todoController.todos[index!].text);
+    TextEditingController(text: todoController.todos[todoController.selectedId.value].text);
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: PRIMARY_COLOR,
         title: Text("Edit"),
 
       ),
@@ -24,7 +26,7 @@ class TodoEdit extends StatelessWidget {
               child: TextField(
                 // textAlign: TextAlign.center,
                 decoration: const InputDecoration(
-                  hintText: "What do you want to accomplish?",
+                  hintText: "Enter your task here",
                   border: InputBorder.none,
                   focusedBorder: InputBorder.none,
                 ),
@@ -42,19 +44,25 @@ class TodoEdit extends StatelessWidget {
               children: [
                 // ignore: deprecated_member_use
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.grey,
+                  ),
                   child: const Text('Delete'),
                   onPressed: () {
-                    todoController.todos.removeAt(index!);
+                    todoController.todos.removeAt(todoController.selectedId.value);
                     Get.back();
                   },
                 ),
                 // ignore: deprecated_member_use
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: PRIMARY_COLOR,
+                  ),
                   child: const Text('Update'),
                   onPressed: () {
-                    var editing = todoController.todos[index!];
+                    var editing = todoController.todos[todoController.selectedId.value];
                     editing.text = textEditingController.text;
-                    todoController.todos[index!] = editing;
+                    todoController.todos[todoController.selectedId.value] = editing;
                     Get.back();
                   },
                 ),
