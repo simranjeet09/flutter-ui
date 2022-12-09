@@ -9,6 +9,7 @@ import 'weather/weather_screen.dart';
 import 'welcome/onboarding.dart';
 
 main() async {
+  //initialize Getstorage to save tasks
   await GetStorage.init();
   runApp(const MyApp());
 }
@@ -19,12 +20,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+    // return GetMaterialApp to use GetX
     return GetMaterialApp(
         title: 'Flutter Assignment',
         initialRoute: "/",
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
+        //set routes to use named navigation
         routes: {
           '/': (BuildContext context) {
             return const OnBoarding();

@@ -1,3 +1,5 @@
+//data class for todo
+
 class Todo {
   String? text;
   bool done;
